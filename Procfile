@@ -1,1 +1,1 @@
-web: gunicorn app:Final_Hotel
+web: python Final_Hotel.py
