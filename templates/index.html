@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Final Hotel Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+
+select { 
+	width: 100%; 
+	margin-bottom: 10px; 
+	background: #fff;
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #092756;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+}
+.login{
+top: 20%;
+}
+</style>
+</head>
+
+<body>
+ <div class="login">
+	  <h4>Final Hotel Prediction</h4>
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+    
+		
+		
+		
+		
+		<input type="number" name="name" placeholder="Name" required="required" />
+
+        <input type="number" name="Distance to City centre(km)" placeholder="Distance to City centre(km)" required="required" />
+        
+        <input type="number" name="Distance to Airport(km)" placeholder="Distance to Airport(km)" required="required" />
+        
+        <input type="number" name="Pool" placeholder="Pool" required="required" />
+        
+        <input type="number" name="Free parking" placeholder="Free parking" required="required" />
+        
+        <input type="number" name="Airport transfer" placeholder="Airport transfer" required="required" />
+        
+        <input type="number" name="Spa" placeholder="Spa" required="required" />
+        
+        <input type="number" name="Restaurant" placeholder="Restaurant" required="required" />
+        
+        <input type="number" name="Gym" placeholder="Gym" required="required" />
+        
+        <input type="number" name="Bar" placeholder="Bar" required="required" />
+        
+        <input type="number" name="Bathtub" placeholder="Bathtub" required="required" />
+        
+        <input type="number" name="Meeting Facilities" placeholder="Meeting Facilities" required="required" />
+        
+        <input type="number" name="Connecting rooms available" placeholder="Connecting rooms available" required="required" />
+        
+        <input type="number" name="Pet-friendly" placeholder="Pet-friendly" required="required" />
+        
+        <input type="number" name="Kitchen" placeholder="Kitchen" required="required" />
+        
+        <input type="number" name="Internet access" placeholder="Internet access" required="required" />
+        
+        <input type="number" name="Check_in_year" placeholder="Check_in_year" required="required" />
+        
+        <input type="number" name="Check_in_month" placeholder="Check_in_month" required="required" />
+        
+        <input type="number" name="Check_in_day" placeholder="Check_in_day" required="required" />
+        
+        <input type="number" name="Check_out_year" placeholder="Check_out_year" required="required" />
+        
+        <input type="number" name="Check_out_month" placeholder="Check_in_month" required="required" />
+        
+        <input type="number" name="Check_out_day" placeholder="Check_in_day" required="required" />
+        
+        <input type="number" name="Banglore" placeholder="Banglore" required="required" />
+        
+        <input type="number" name="Bhopal" placeholder="Bhopal" required="required" />
+        
+        <input type="number" name="Chandigarh" placeholder="Chandigarh" required="required" />
+        
+        <input type="number" name="Chennai" placeholder="Chennai" required="required" />
+        
+        <input type="number" name="Goa" placeholder="Goa" required="required" />
+        
+        <input type="number" name="Gurgaon" placeholder="Gurgaon" required="required" />
+        
+        <input type="number" name="Hyderabad" placeholder="Hyderabad" required="required" />
+        
+        <input type="number" name="Jaipur" placeholder="Jaipur" required="required" />
+        
+        <input type="number" name="Kochi" placeholder="Kochi" required="required" />
+        
+        <input type="number" name="Kolkata" placeholder="Kolkata" required="required" />
+        
+        <input type="number" name="Kullu" placeholder="Kullu" required="required" />
+        
+        <input type="number" name="Leh" placeholder="Leh" required="required" />
+        
+        <input type="number" name="Lucknow" placeholder="Lucknow" required="required" />
+        
+        <input type="number" name="Mumbai" placeholder="Mumbai" required="required" />
+        
+        <input type="number" name="Munnar" placeholder="Munnar" required="required" />
+        
+        <input type="number" name="Nagpur" placeholder="Nagpur" required="required" />
+        
+        <input type="number" name="New Delhi" placeholder="New Delhi" required="required" />
+        
+        <input type="number" name="Noida" placeholder="Noidar" required="required" />
+        
+        <input type="number" name="Pune" placeholder="Pune" required="required" />
+        
+        <input type="number" name="Rishikesh" placeholder="Rishikesh" required="required" />
+        
+        <input type="number" name="Tirupati, Andhra Pradesh, India" placeholder="Tirupathi" required="required" />
+        
+        <input type="number" name="Varanasi" placeholder="Varanasi" required="required" />
+        
+        <input type="number" name="Visakhapatnam, Andhra Pradesh, India" placeholder="Visakapatnam" required="required" />
+        
+        <button type="submit" class="btn btn-warning btn-block btn-large">Predict</button>
+
+
+    {{ prediction_text }}
+   <br>
+   <br>
+
+ </div>
+
+
+</body>
+</html>
+
